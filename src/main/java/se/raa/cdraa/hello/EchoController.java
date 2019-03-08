@@ -16,6 +16,7 @@ public class EchoController {
     @ResponseBody
     public ResponseEntity<Host> echo() throws UnknownHostException {
         String hostname = InetAddress.getLocalHost().getHostName();
+        hostname = "Hej sa Jens, " + hostname;
         Host host = new Host();
         host.setHostname(hostname);
 

@@ -3,12 +3,14 @@ package se.raa.cdraa.hello;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
+@CrossOrigin
 @Controller
 public class EchoController {
 
@@ -20,6 +22,6 @@ public class EchoController {
         Host host = new Host();
         host.setHostname(hostname);
 
-        return new ResponseEntity<Host>(host, HttpStatus.OK);
+        return new ResponseEntity(host, HttpStatus.OK);
     }
 }

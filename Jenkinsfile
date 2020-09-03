@@ -2,8 +2,14 @@ pipeline {
   agent any
   stages {
     stage('Bygg') {
+      agent {
+        docker {
+          image 'gradle:6.6-jdk8'
+        }
+
+      }
       steps {
-        echo 'Bygg'
+        sh './gradlew clean build'
       }
     }
 
